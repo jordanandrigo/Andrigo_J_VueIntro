@@ -5,19 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working with vue</title>
 
+    <link rel="stylesheet" href="css/main.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <main id="app">
+    <main id="app">  <!-- vue only works if it is wrapped in an id or class tag -->
         <h1 @click="clickHeader">{{ message }}</h1>
         <h2>{{ anotherMessage }}</h2>
+        
 
-        <!-- show the prof data in collection -->
+        <!-- show the prof data in profs array -->
         <ul>
             <li v-for="item in collection">
-                <p v-on:click="logClicked">Friend Name: {{ item.name }}, Role: {{ item.role }}</p>
+                <p>Friend Name: {{ item.name }}, Role: {{ item.role }}, Nickname: {{ item.nickname }}</p>
+                <a href="" class="remove-friend" @click.prevent="removeFriend(friend)" :class="{'friend-button-modifier' : removeAformat}">Remove {{ item.name }}</a> <!-- :href=""-->
             </li>
         </ul>
+
+        <section class="bio-data" :class="{'show-bio' : showBioData}">
+            
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Sint iste iusto nisi aliquam perferendis? Officiis quis, 
+                corporis facilis officia, fugit quae hic, quia eos voluptates
+                 quas dolorum in saepe. Voluptate.
+            </p>
+        </section>
     </main>
     <script src="js/main.js" type="module"></script>
 </body>

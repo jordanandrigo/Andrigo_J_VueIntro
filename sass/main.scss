@@ -1,0 +1,27 @@
+.remove-friend {
+    padding: 8px 12px;
+    color: white;
+    background-color: #333;
+    border: thin solid rgb(149, 149, 255);
+    text-transform: uppercase;
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    &:hover { 
+        background-color: rgb(112, 112, 255);
+
+    }
+}
+
+.friend-button-modifier {
+    text-decoration: none;
+}
+
+.bio-data {
+    display: none;
+}
+
+.show-bio {
+    display: block !important;
+}
